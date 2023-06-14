@@ -26,6 +26,10 @@ h1 {
     margin: 0.5em;
 }
 
+.titleObject {
+    margin: 0.5em;
+}
+
 button.closeX {
     width: 10%;
     color: red;
