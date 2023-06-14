@@ -1,12 +1,36 @@
+body {
+    margin-top: 100px;
+}
 
-/* 
+.input {
+    margin:0 auto;
+    width:50%;
+}
 
-    You can write your own styles here...
-    
-    
-    ...Or you can use the import command to include 
-    other sylesheets into your bunde as well, e.j:
-    
-    import 'relative/path/to/stylesheet.scss';
+.input input {
+    border: 1px solid black;
+    width: 70%;
+}
 
-*/
+.input button {
+    width: 30%;
+}
+
+
+h1 {
+    text-align: center;
+}
+
+.todoItem {
+    width: 90%;
+    margin: 0.5em;
+}
+
+button.closeX {
+    width: 10%;
+    color: red;
+    font-weight: 800;
+    background-color: #fff;
+    border: none;
+
+}

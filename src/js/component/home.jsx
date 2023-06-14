@@ -1,26 +1,68 @@
 import React from "react";
 
-//include images into your bundle
-import rigoImage from "../../img/rigo-baby.jpg";
 
 //create your first component
 const Home = () => {
-	return (
-		<div className="text-center">
-			<h1 className="text-center mt-5">Hello Rigo!</h1>
-			<p>
-				<img src={rigoImage} />
-			</p>
-			<a href="#" className="btn btn-success">
-				If you see this green button... bootstrap is working...
-			</a>
-			<p>
-				Made by{" "}
-				<a href="http://www.4geeksacademy.com">4Geeks Academy</a>, with
-				love!
-			</p>
-		</div>
-	);
+
+		return(
+
+			<TodoListWithArray />
+
+		)
+			
 };
+
+
+
+const TodoListWithArray = () => {
+	const [todoList, setTodoList] = React.useState(["Hola"])
+	const [inputValue, setInputValue] = React.useState([""])
+	const ADD_NEW_VALUE_KEY = "Enter"
+
+	const handleInputChange = (e) => {
+		setInputValue(e.target.value)
+	}
+
+	const addNewElement = () => {
+		if(!inputValue) return
+
+		setTodoList(prev => [...prev, inputValue])
+		setInputValue("")
+	}
+
+	const handleClick = () => addNewElement()
+
+	const onEnter = (e) => {
+		if (e.key === ADD_NEW_VALUE_KEY) addNewElement()
+	}
+
+	
+
+	return <>
+
+		<h1>To do List</h1>
+
+		<div className="input">
+
+			<input value={inputValue} onChange={handleInputChange} onKeyDown={onEnter} />
+
+			<button onClick={handleClick}>add one</button>
+
+			{
+				todoList.map((todoItem, index) => {
+					return (
+						<section key={index} style={{display:"flex", padding:"0.1rem"}}>
+							<p className="todoItem">{`${todoItem}`}</p>
+							
+						</section>
+					)
+				})
+
+			}
+
+		</div>
+	</>
+}
+
 
 export default Home;
