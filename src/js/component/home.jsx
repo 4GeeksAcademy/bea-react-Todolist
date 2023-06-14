@@ -36,7 +36,9 @@ const TodoListWithArray = () => {
 		if (e.key === ADD_NEW_VALUE_KEY) addNewElement()
 	}
 
-	
+	const deleteElementOnClick = (indexToDelete) => {
+		setTodoList(prev => prev.filter((_, index) => index !== indexToDelete))
+	}
 
 	return <>
 
@@ -53,7 +55,7 @@ const TodoListWithArray = () => {
 					return (
 						<section key={index} style={{display:"flex", padding:"0.1rem"}}>
 							<p className="todoItem">{`${todoItem}`}</p>
-							
+							<button className="closeX" onClick={() => deleteElementOnClick(index)}>X</button>
 						</section>
 					)
 				})
