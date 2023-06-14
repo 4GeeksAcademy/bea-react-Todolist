@@ -78,18 +78,24 @@ const TodoListWithArrayOfObjects = () => {
 	]
 
 	const [todoList, setTodoList] = React.useState(defaultState)
-	const [inputValue, setInputValue] = React.useState("")
+	const [titleValue, setTitleValue] = React.useState("")
+	const [descValue, setDescValue] = React.useState("")
 	const ADD_NEW_VALUE_KEY = "Enter"
 
 	const handleInputChange = (e) => {
-		setInputValue(e.target.value)
+		setTitleValue(e.target.value)
+	}
+
+	const handleDescInputChange = (e) => {
+		setDescValue(e.target.value)
 	}
 
 	const addNewElement = () => {
-		if(!inputValue) return
+		if(!titleValue) return
 
-		setTodoList(prev => [...prev, {title: inputValue, description: inputValue + 'description'}])
-		setInputValue("")
+		setTodoList(prev => [...prev, {title: titleValue, description: descValue }])
+		setTitleValue("")
+		setDescValue("")
 	}
 
 	const handleClick = () => addNewElement()
@@ -108,7 +114,8 @@ const TodoListWithArrayOfObjects = () => {
 
 		<div className="input">
 
-			<input value={inputValue} onChange={handleInputChange} onKeyDown={onEnter} />
+			<input value={titleValue} onChange={handleInputChange} />
+			<textarea value={descValue} onChange={handleDescInputChange} onKeyDown={onEnter} />
 
 			<button onClick={handleClick}>add one</button>
 
