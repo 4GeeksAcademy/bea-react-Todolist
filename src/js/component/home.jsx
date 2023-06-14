@@ -114,10 +114,10 @@ const TodoListWithArrayOfObjects = () => {
 
 		<div className="input">
 
-			<input value={titleValue} onChange={handleInputChange} />
-			<textarea value={descValue} onChange={handleDescInputChange} onKeyDown={onEnter} />
+			<input value={titleValue} onChange={handleInputChange} placeholder="Title"/>
+			<textarea value={descValue} onChange={handleDescInputChange} onKeyDown={onEnter} placeholder="Description"/>
 
-			<button onClick={handleClick}>add one</button>
+			<button onClick={handleClick}>Add</button>
 
 			{
 				todoList.map((todoItem, index) => {

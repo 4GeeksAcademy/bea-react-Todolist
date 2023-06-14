@@ -4,16 +4,26 @@ body {
 
 .input {
     margin:0 auto;
-    width:50%;
+    width:400px;
 }
 
-.input input {
-    border: 1px solid black;
-    width: 70%;
+.input input, .input textarea {
+    border: none;
+    border-radius: 10px;
+    background-color: rgb(245, 245, 245);
+    padding: 8px 15px;
+    width: 100%;
+    margin-bottom: 0.5em;
 }
+
 
 .input button {
-    width: 30%;
+    width: 100%;
+    background-color: rgb(173, 236, 135);
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+    font-weight: 600;
 }
 
 
